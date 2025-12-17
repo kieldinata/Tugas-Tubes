@@ -44,15 +44,26 @@ struct ListGame {
     adrGame last;
 };
 
-void createLIstGame(ListGame &G)
+
+//basic requirement
+void createListGame(ListGame &G)
 bool isEmptyGame(ListGame G);
 bool isEmptyCharacter(adrCharacter c);
-adrGame createElementGame(string judul, string genre, int tahunRilis, float rating);
-adrCharacter createElementCharacter(string nama, string asalDunia, string ras, string peran, int strenght, int agility, int hp, int battleIq, int experience);
-void addMahasiswa(ListMahasiswa &L, adrMahasiswa p);
-void addMatakuliah(adrMahasiswa p, adrMataKuliah q);
-adrMahasiswa searchMahasiswa(ListMahasiswa L, string nama, string nim);
-void displayList(ListMahasiswa L);
+adrGame createElementGame(Game newGame);                            //poin a
+adrCharacter createElementCharacter(Character newChar);             //poin b
+void addGame(ListGame &G, adrGame game);
+void addCharacter(adrGame &C, adrCharacter chara);                  //poin d
+adrGame searchGame(ListGame G, string gameName);                    //poin c
+adrCharacter searchCharacter(adrGame C, string charaName);
+void deleteGame(ListGame &G, string gameName);                      //poin f
+void deleteCharacter(adrGame &C, string charaName);                 //poin g
+void showCharacterInGame(adrGame game);                                         //poin e
+int countCharacterInGame(adrGame game);                                         //poin i
+void showGameWithMostCharacter(ListGame G);                                   //poin j
+void showWholeCatalogue(ListGame G);                                          //poin h
+
+//added feature
+void simulateFight(ListGame game);
 
 
 #endif // CATALOGUE_H_INCLUDED
