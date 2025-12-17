@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1765980350 source:c:\users\user\documents\github\tugas-tubes\game-catalogue\main.cpp
+	<iostream>
+	"Catalogue.h"
+
+1765980019 c:\users\user\documents\github\tugas-tubes\game-catalogue\catalogue.h
+	<iostream>
+	<cstdlib>
+	<ctime>
+
+1765980394 source:c:\users\user\documents\github\tugas-tubes\game-catalogue\catalogue.cpp
+	"Catalogue.h"
+

@@ -1,7 +1,9 @@
 #ifndef CATALOGUE_H_INCLUDED
 #define CATALOGUE_H_INCLUDED
 
-#include <string>
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
 typedef struct elemenGame* adrGame;
@@ -36,7 +38,6 @@ struct elemenGame {
 struct elemenCharacter {
     Character info;
     adrCharacter next;
-    adrCharacter prev;
 };
 
 struct ListGame {
@@ -44,11 +45,15 @@ struct ListGame {
     adrGame last;
 };
 
+struct ListFight {
+    adrCharacter first;
+};
+
 
 //basic requirement
-void createListGame(ListGame &G)
+void createListGame(ListGame &G);
 bool isEmptyGame(ListGame G);
-bool isEmptyCharacter(adrCharacter c);
+bool isEmptyCharacter(adrGame C);
 adrGame createElementGame(Game newGame);                            //poin a
 adrCharacter createElementCharacter(Character newChar);             //poin b
 void addGame(ListGame &G, adrGame game);
@@ -57,13 +62,14 @@ adrGame searchGame(ListGame G, string gameName);                    //poin c
 adrCharacter searchCharacter(adrGame C, string charaName);
 void deleteGame(ListGame &G, string gameName);                      //poin f
 void deleteCharacter(adrGame &C, string charaName);                 //poin g
-void showCharacterInGame(adrGame game);                                         //poin e
+void showCharacterInGame(ListGame G, string gameName);                                         //poin e
 int countCharacterInGame(adrGame game);                                         //poin i
-void showGameWithMostCharacter(ListGame G);                                   //poin j
-void showWholeCatalogue(ListGame G);                                          //poin h
+adrGame GameWithMostCharacter(ListGame G);                                   //poin j
+void WholeCatalogue(ListGame G);                                          //poin h
 
 //added feature
-void simulateFight(ListGame game);
+void chooseFighter(ListGame G, ListFight &arena, adrCharacter fighter);
+void simulateFight(ListFight arena);
 
 
 #endif // CATALOGUE_H_INCLUDED
