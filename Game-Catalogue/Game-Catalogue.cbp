@@ -34,6 +34,8 @@
 		</Compiler>
 		<Unit filename="Catalogue.cpp" />
 		<Unit filename="Catalogue.h" />
+		<Unit filename="Decoration.cpp" />
+		<Unit filename="Decoration.h" />
 		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>
