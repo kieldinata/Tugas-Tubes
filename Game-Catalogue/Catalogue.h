@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <vector>
 #include <ctime>
 using namespace std;
 
@@ -10,21 +11,20 @@ typedef struct elemenGame* adrGame;
 typedef struct elemenCharacter* adrCharacter;
 
 struct Game {
-    string judul;
+    string nama;
     string genre;
 	int tahunRilis;
 	float rating;
 };
-
 struct Character {
     string nama;
     string asalDunia;
 	string peran;
 	string ras;
-	int strenght;
+	int strength;
 	int agility;
 	int hp;
-	int battleIq;
+	int battleIQ;
 	int experience;
 };
 
@@ -34,7 +34,6 @@ struct elemenGame {
     adrGame prev;
     adrCharacter firstChar;
 };
-
 struct elemenCharacter {
     Character info;
     adrCharacter next;
@@ -45,31 +44,32 @@ struct ListGame {
     adrGame last;
 };
 
-struct ListFight {
-    adrCharacter first;
-};
-
-
-//basic requirement
+//[GAME]
 void createListGame(ListGame &G);
 bool isEmptyGame(ListGame G);
-bool isEmptyCharacter(adrGame C);
-adrGame createElementGame(Game newGame);                            //poin a
-adrCharacter createElementCharacter(Character newChar);             //poin b
+adrGame createElementGame(Game gameInfo);                            //poin a
 void addGame(ListGame &G, adrGame game);
-void addCharacter(adrGame &C, adrCharacter chara);                  //poin d
 adrGame searchGame(ListGame G, string gameName);                    //poin c
-adrCharacter searchCharacter(adrGame C, string charaName);
+adrGame searchGameWithCharacter(ListGame G, string charaName);
 void deleteGame(ListGame &G, string gameName);                      //poin f
-void deleteCharacter(adrGame &C, string charaName);                 //poin g
-void showCharacterInGame(ListGame G, string gameName);                                         //poin e
-int countCharacterInGame(adrGame game);                                         //poin i
 adrGame GameWithMostCharacter(ListGame G);                                   //poin j
-void WholeCatalogue(ListGame G);                                          //poin h
+int countCharacterInGame(adrCharacter chara);
 
-//added feature
-void chooseFighter(ListGame G, ListFight &arena, adrCharacter fighter);
-void simulateFight(ListFight arena);
+//[CHARACTER]
+bool isEmptyCharacter(adrGame C);
+adrCharacter createElementCharacter(Character newChar);             //poin b
+void addCharacter(adrGame &C, adrCharacter chara);                  //poin d
+adrCharacter searchCharacter(ListGame G, string charaName);
+void deleteCharacter(ListGame G, string charaName);                 //poin g
+void deleteAllCharacter(adrGame &C, adrCharacter &chara);
+                                        //poin i
+
+//[FIGHT SIMULATOR]
+void chooseCharacter(ListGame &G, vector<Character> &chosenChar, string charaName, bool &valid);
+adrCharacter simulateFight(vector<Character> &chosenChar);
+
+//[POWER RANK]
+void rankCharacterPower(ListGame G, vector<Character> &rankedChar);
 
 
 #endif // CATALOGUE_H_INCLUDED
