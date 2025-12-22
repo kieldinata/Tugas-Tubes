@@ -1,8 +1,6 @@
 #ifndef OUTPUT_H_INCLUDED
 #define OUTPUT_H_INCLUDED
 
-#include <iostream>
-using namespace std;
-
-
+#include "Catalogue.h"
+void
 #endif // OUTPUT_H_INCLUDED

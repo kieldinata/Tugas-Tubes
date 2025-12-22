@@ -197,11 +197,87 @@ void chooseCharacter(ListGame &G, vector<Character> &chosenChar, string charaNam
         valid = false;
     }
 }
-adrCharacter simulateFight(vector<Character> &chosenChar){
+Character simulateFight(vector<Character> &chosenChar){
+    if (chosenChar.size() == 1){
+            return chosenChar[0];
+    }
 
+    while (chosenChar.size() > 1){
+        Character p1 = chosenChar.back();
+        chosenChar.pop_back();
+
+        Character p2 = chosenChar.back();
+        chosenChar.pop_back();
+
+        Character winner = duel(p1, p2);
+        chosenChar.push_back(winner);
+    }
+    return chosenChar[0];
 }
+int calcDamage(Character attacker, Character defender){
+    int baseDmg = attacker.strength;
+    int expBonus = attacker.experience / 10;
+    int bIQBonus = attacker.battleIQ - defender.battleIQ;
+    if (bIQBonus < 0){bIQBonus = 0;}
+    float hitChance = float(attacker.agility) / (attacker.agility + defender.agility);
+    float roll = (float)rand() / RAND_MAX;
+    if (roll <= hitChance){
+        return  1 * baseDmg + expBonus + bIQBonus;
+    }
+    return 0;
+}
+Character duel(Character p1, Character p2){
+    bool turn = true;
+
+    while (p1.hp > 0 && p2.hp > 0){
+        if (turn){
+            int dmg = calcDamage(p1, p2);
+            p2.hp -= dmg;
+        } else {
+            int dmg = calcDamage(p2, p1);
+            p1.hp -= dmg;
+        }
+        turn = !turn;
+    }
+
+    if (p1.hp > 0) {
+            return p1;
+    }
+    return p2;
+}
+
+
 
 //[POWER RANK]
-void rankCharacterPower(ListGame G, vector<Character> &rankedChar){
-
+void initCharVector(ListGame G, vector<Character> &charVector){
+    adrGame p;
+    adrCharacter q;
+    int counter = 0;
+    charVector.clear();
+    p = G.first;
+    while (p != nullptr){
+        q = p->firstChar;
+        while (q != nullptr){
+            charVector.push_back(q->info);
+            counter++;
+            q = q->next;
+        }
+        p = p->next;
+    }
 }
+int calcPower(Character c){
+    return (c.strength + c.hp) * c.agility * c.battleIQ + c.experience;
+}
+void sortCharacterRank(vector<Character> &charVector){
+    int n = charVector.size();
+    for (int i = 0; i < n - 1; i++){
+        for (int j = 0; j < n - i - 1; j++){
+            if (calcPower(charVector[j]) < calcPower(charVector[j + 1])){
+                Character temp = charVector[j];
+                charVector[j] = charVector[j + 1];
+                charVector[j + 1] = temp;
+            }
+        }
+    }
+}
+

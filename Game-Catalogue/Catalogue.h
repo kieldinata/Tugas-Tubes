@@ -24,7 +24,7 @@ struct Character {
 	int strength;
 	int agility;
 	int hp;
-	int battleIQ;
+	int battleIQ ;
 	int experience;
 };
 
@@ -66,10 +66,14 @@ void deleteAllCharacter(adrGame &C, adrCharacter &chara);
 
 //[FIGHT SIMULATOR]
 void chooseCharacter(ListGame &G, vector<Character> &chosenChar, string charaName, bool &valid);
-adrCharacter simulateFight(vector<Character> &chosenChar);
+Character simulateFight(vector<Character> &chosenChar);
+int calcDamage(Character attacker, Character defender);
+int duel(Character p1, Character p2);
 
 //[POWER RANK]
-void rankCharacterPower(ListGame G, vector<Character> &rankedChar);
+void initCharVector(ListGame G, vector<Character> &charVector);
+int calcPower(Character c);
+void sortCharacterRank(vector<Character> &charVector);
 
 
 #endif // CATALOGUE_H_INCLUDED

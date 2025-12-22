@@ -34,7 +34,6 @@
 		</Compiler>
 		<Unit filename="Catalogue.cpp" />
 		<Unit filename="Catalogue.h" />
-		<Unit filename="Output.h" />
 		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>
