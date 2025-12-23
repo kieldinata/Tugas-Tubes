@@ -33,9 +33,13 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="Catalogue.cpp" />
-		<Unit filename="Catalogue.h" />
+		<Unit filename="Catalogue.h">
+			<Option compile="1" />
+		</Unit>
 		<Unit filename="Decoration.cpp" />
-		<Unit filename="Decoration.h" />
+		<Unit filename="Decoration.h">
+			<Option compile="1" />
+		</Unit>
 		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>
