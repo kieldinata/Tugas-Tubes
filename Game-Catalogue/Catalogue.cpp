@@ -9,14 +9,14 @@ bool isEmptyGame(ListGame G){
     return G.first == nullptr && G.last == nullptr;
 }
 adrGame createElementGame(Game gameInfo){
-    adrGame p;
-    p = elemenGame;
-    p->info = newGame;
+    adrGame p = new elemenGame;
+    p->info = gameInfo;
     p->firstChar = nullptr;
     p->next = nullptr;
     p->prev = nullptr;
-
+    return p;
 }
+
 void addGame(ListGame &G, adrGame game){
     adrGame p = G.first;
 
@@ -117,7 +117,7 @@ int countCharacterInGame(adrCharacter chara){
 
 //[CHARACTER]
 bool isEmptyCharacter(adrGame C){
-    retun C.firstChar == nullptr;
+    return C.firstChar == nullptr;
 }
 adrCharacter createElementCharacter(Character newChar){
     adrCharacter chara;
@@ -182,6 +182,7 @@ void deleteAllCharacter(adrGame &C, adrCharacter &chara){
     if (chara != nullptr){
         deleteAllCharacter(C, chara->next);
         delete chara;
+        chara = nullptr;
     }
 }
                                       //poin i

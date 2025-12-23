@@ -11,7 +11,7 @@ void color(string c){
 
 void printLogo(){
     cout << endl;
-    cout << AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA << endl;
+    cout << "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" << endl;
     cout << endl;
 }
 void pause(){
