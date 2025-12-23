@@ -68,7 +68,7 @@ void deleteAllCharacter(adrGame &C, adrCharacter &chara);
 void chooseCharacter(ListGame &G, vector<Character> &chosenChar, string charaName, bool &valid);
 Character simulateFight(vector<Character> &chosenChar);
 int calcDamage(Character attacker, Character defender);
-int duel(Character p1, Character p2);
+Character duel(Character p1, Character p2);
 
 //[POWER RANK]
 void initCharVector(ListGame G, vector<Character> &charVector);

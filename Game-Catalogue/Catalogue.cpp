@@ -117,7 +117,7 @@ int countCharacterInGame(adrCharacter chara){
 
 //[CHARACTER]
 bool isEmptyCharacter(adrGame C){
-    return C.firstChar == nullptr;
+    return C->firstChar == nullptr;
 }
 adrCharacter createElementCharacter(Character newChar){
     adrCharacter chara;
@@ -128,10 +128,10 @@ adrCharacter createElementCharacter(Character newChar){
 }
 void addCharacter(adrGame &C, adrCharacter chara){
     adrCharacter p;
-    if (C.firstChar == nullptr){
-        C.firstChar = chara;
+    if (C->firstChar == nullptr){
+        C->firstChar = chara;
     } else {
-        p = C.firstChar;
+        p = C->firstChar;
         while (p->next != nullptr){
             p = p->next;
         }

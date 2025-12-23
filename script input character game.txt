@@ -1,0 +1,376 @@
+2
+Eclipse of Valor
+Aldric Stormblade
+Valenor
+Warrior
+Human
+85
+60
+120
+70
+80
+
+
+2
+Eclipse of Valor
+Lyra Moonveil
+Lunaria
+Mage
+Elf
+40
+75
+90
+85
+78
+
+
+2
+Eclipse of Valor
+Gorath Ironfist
+Stonehelm
+Tank
+Dwarf
+90
+40
+150
+65
+82
+
+
+2
+Eclipse of Valor
+Selene Nightwind
+Umbra
+Assassin
+Elf
+65
+90
+85
+80
+76
+
+
+2
+Eclipse of Valor
+Theron Lightbringer
+Solaria
+Paladin
+Human
+80
+55
+130
+75
+85
+
+
+2
+Eclipse of Valor
+Nyx Shadowclaw
+Abyss
+Rogue
+Demon
+70
+88
+95
+78
+74
+
+
+2
+Eclipse of Valor
+Eldon Wiseoak
+Verdantia
+Support
+Elf
+45
+50
+100
+90
+88
+
+
+2
+Cyber Arena X
+ZeroByte
+Neo City
+Fighter
+Android
+88
+70
+110
+75
+80
+
+
+2
+Cyber Arena X
+Nova Pulse
+Neo City
+Sniper
+Human
+60
+85
+95
+82
+78
+
+
+2
+Cyber Arena X
+IronHex
+Steel Core
+Tank
+Cyborg
+92
+40
+160
+65
+85
+
+
+2
+Cyber Arena X
+GlitchFox
+NetSphere
+Hacker
+AI
+50
+80
+90
+95
+88
+
+
+2
+Cyber Arena X
+Vortex
+Neo City
+Brawler
+Human
+85
+65
+125
+70
+82
+
+
+2
+Cyber Arena X
+NeonBlade
+Steel Core
+Assassin
+Cyborg
+75
+90
+100
+78
+80
+
+
+2
+Cyber Arena X
+EchoUnit
+NetSphere
+Support
+Android
+55
+60
+110
+88
+84
+
+
+2
+Mythic Conquest
+King Arvandor
+Avaloria
+Commander
+Human
+85
+55
+140
+90
+92
+
+
+2
+Mythic Conquest
+Seraphina
+Celestia
+Healer
+Angel
+45
+60
+120
+95
+88
+
+
+2
+Mythic Conquest
+Malgrim
+Bloodrock
+Berserker
+Orc
+95
+50
+150
+65
+85
+
+
+2
+Mythic Conquest
+Aeris Dawnwhisper
+Sylvan
+Scout
+Elf
+60
+85
+100
+80
+78
+
+
+2
+Mythic Conquest
+Brom Stonewall
+Ironforge
+Defender
+Dwarf
+88
+40
+160
+70
+82
+
+
+2
+Mythic Conquest
+Zyra Flameborn
+Drakoria
+Mage
+Dragonkin
+75
+65
+120
+88
+90
+
+
+2
+Mythic Conquest
+Korin Swiftstep
+Avaloria
+Ranger
+Human
+70
+90
+105
+78
+80
+
+
+2
+Realm of Legends
+Lancel Virex
+Eldoria
+Knight
+Human
+85
+60
+135
+78
+82
+
+
+2
+Realm of Legends
+Mira Sunfall
+Solmere
+Sorcerer
+Human
+55
+70
+110
+88
+85
+
+
+2
+Realm of Legends
+Drakon Bloodscale
+Volcanis
+Dragon
+Dragon
+95
+50
+180
+75
+90
+
+
+2
+Realm of Legends
+Elwyn Frostleaf
+Frostwood
+Archer
+Elf
+65
+88
+100
+80
+78
+
+
+2
+Realm of Legends
+Thorne Blackhand
+Shadowreach
+Rogue
+Human
+75
+85
+105
+82
+80
+
+
+2
+Realm of Legends
+Isolde Dawnshield
+Lumina
+Cleric
+Human
+50
+55
+130
+90
+88
+
+
+2
+Realm of Legends
+Ragnar Doomaxe
+Skullmount
+Barbarian
+Human
+90
+65
+160
+68
+85
+
+
+2
+Realm of Legends
+Ragnar Doomaxe
+Skullmount
+Barbarian
+Human
+90
+65
+160
+68
+85
+

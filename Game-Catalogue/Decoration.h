@@ -6,8 +6,7 @@ using namespace std;
 
 void color(string color);
 void printLogo();
+void printLine();
 void pause();
-
-
 
 #endif // DECORATION_H_INCLUDED

@@ -11,21 +11,33 @@
 1765980394 source:c:\users\user\documents\github\tugas-tubes\game-catalogue\catalogue.cpp
 	"Catalogue.h"
 
-1766484561 source:d:\kuliah\tugas kuliah\semester 3\struktur data\tugas-tubes\game-catalogue\main.cpp
+1766510727 source:d:\kuliah\tugas kuliah\semester 3\struktur data\tugas-tubes\game-catalogue\main.cpp
+	<iostream>
+	<vector>
 	"Catalogue.h"
+	"Decoration.h"
 
-1766484561 d:\kuliah\tugas kuliah\semester 3\struktur data\tugas-tubes\game-catalogue\catalogue.h
+1766505575 d:\kuliah\tugas kuliah\semester 3\struktur data\tugas-tubes\game-catalogue\catalogue.h
 	<iostream>
 	<cstdlib>
 	<vector>
 	<ctime>
 
-1766484561 source:d:\kuliah\tugas kuliah\semester 3\struktur data\tugas-tubes\game-catalogue\catalogue.h
+1766505575 source:d:\kuliah\tugas kuliah\semester 3\struktur data\tugas-tubes\game-catalogue\catalogue.h
 	<iostream>
 	<cstdlib>
 	<vector>
 	<ctime>
 
-1766484561 source:d:\kuliah\tugas kuliah\semester 3\struktur data\tugas-tubes\game-catalogue\decoration.h
+1766510257 source:d:\kuliah\tugas kuliah\semester 3\struktur data\tugas-tubes\game-catalogue\decoration.h
 	<iostream>
+
+1766510260 source:d:\kuliah\tugas kuliah\semester 3\struktur data\tugas-tubes\game-catalogue\decoration.cpp
+	"Decoration.h"
+
+1766510257 d:\kuliah\tugas kuliah\semester 3\struktur data\tugas-tubes\game-catalogue\decoration.h
+	<iostream>
+
+1766505442 source:d:\kuliah\tugas kuliah\semester 3\struktur data\tugas-tubes\game-catalogue\catalogue.cpp
+	"Catalogue.h"
 

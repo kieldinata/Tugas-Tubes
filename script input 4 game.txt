@@ -1,0 +1,28 @@
+inputan tambah 4 game
+1
+Eclipse of Valor
+RPG
+2021
+4.5
+
+
+1
+Cyber Arena X
+Action
+2022
+4.2
+
+
+1
+Mythic Conquest
+Strategy
+2020
+4.7
+
+
+1
+Realm of Legends
+Fantasy
+2019
+4.6
+
