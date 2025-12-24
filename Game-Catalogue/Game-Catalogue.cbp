@@ -32,6 +32,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Linker>
+			<Add option="-static-libstdc++" />
+			<Add option="-static-libgcc" />
+			<Add option="-static" />
+		</Linker>
 		<Unit filename="Catalogue.cpp" />
 		<Unit filename="Catalogue.h">
 			<Option compile="1" />
@@ -40,6 +45,8 @@
 		<Unit filename="Decoration.h">
 			<Option compile="1" />
 		</Unit>
+		<Unit filename="Menu.cpp" />
+		<Unit filename="Menu.h" />
 		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>

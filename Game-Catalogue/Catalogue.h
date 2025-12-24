@@ -1,9 +1,9 @@
 #ifndef CATALOGUE_H_INCLUDED
 #define CATALOGUE_H_INCLUDED
 
-#include <iostream>
-#include <cstdlib>
+#include <string>
 #include <vector>
+#include <cstdlib>
 #include <ctime>
 using namespace std;
 
@@ -15,6 +15,7 @@ struct Game {
     string genre;
 	int tahunRilis;
 	float rating;
+	int jumlahKarakter;
 };
 struct Character {
     string nama;
@@ -49,31 +50,48 @@ void createListGame(ListGame &G);
 bool isEmptyGame(ListGame G);
 adrGame createElementGame(Game gameInfo);                            //poin a
 void addGame(ListGame &G, adrGame game);
-adrGame searchGame(ListGame G, string gameName);                    //poin c
-adrGame searchGameWithCharacter(ListGame G, string charaName);
-void deleteGame(ListGame &G, string gameName);                      //poin f
-adrGame GameWithMostCharacter(ListGame G);                                   //poin j
-int countCharacterInGame(adrCharacter chara);
+bool isValidGameToAdd(ListGame G, Game gameInfo);
+adrGame findGame(ListGame G, string gameName);                    //poin c
+void deleteGame(ListGame &G, adrGame C);                      //poin f
+
 
 //[CHARACTER]
 bool isEmptyCharacter(adrGame C);
 adrCharacter createElementCharacter(Character newChar);             //poin b
 void addCharacter(adrGame &C, adrCharacter chara);                  //poin d
-adrCharacter searchCharacter(ListGame G, string charaName);
-void deleteCharacter(ListGame G, string charaName);                 //poin g
+bool isValidCharacter(adrGame C, string charaName);
+vector<adrCharacter> findCharacter(ListGame G, string charaName);
+adrCharacter findCharacterFromGame(adrGame C, string charaName);
+void deleteCharacterFromGame(adrGame &C, string charaName);                 //poin g
 void deleteAllCharacter(adrGame &C, adrCharacter &chara);
                                         //poin i
 
 //[FIGHT SIMULATOR]
-void chooseCharacter(ListGame &G, vector<Character> &chosenChar, string charaName, bool &valid);
-Character simulateFight(vector<Character> &chosenChar);
+const int MAX_FIGHTER = 10;
+void chooseCharacterArray(ListGame G, Character chosenChar[], int &count, string gameName, string charaName, bool &valid);
+Character simulateFight(Character chosenChar[], int count);
 int calcDamage(Character attacker, Character defender);
 Character duel(Character p1, Character p2);
 
-//[POWER RANK]
-void initCharVector(ListGame G, vector<Character> &charVector);
+
+//[CHARACTER RANK]
+const int MAX_CHAR_SHOWN = 4000;
+void initCharaArray(ListGame G, Character charArray[], int &counter);
 int calcPower(Character c);
-void sortCharacterRank(vector<Character> &charVector);
+void sortCharacterRank(Character charArray[], int counter);
+
+
+//GAME RANK
+const int MAX_GAME_SHOWN = 200;
+void initGameArray(ListGame G, Game gameArray[], int &counter);
+void sortGameWithParameter(Game gameArray[], int counter, string parameter);
+int countCharacterInGame(adrCharacter chara);
+adrGame GameWithMostCharacter(ListGame G);                                   //poin j
+
+
+
+//[- byebye data game & karakter]
+void byebyedata(adrGame &C);
 
 
 #endif // CATALOGUE_H_INCLUDED

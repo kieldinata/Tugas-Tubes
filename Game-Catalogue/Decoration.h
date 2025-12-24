@@ -8,5 +8,6 @@ void color(string color);
 void printLogo();
 void printLine();
 void pause();
+void invalidMessage(bool parameter, string salahApa);
 
 #endif // DECORATION_H_INCLUDED

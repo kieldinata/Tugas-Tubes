@@ -18,16 +18,16 @@ void color(string c){
 }
 
 void printLogo(){
+    system("cls");
     color("cyan");
-    cout << endl;
-    cout << "   ____    _    __  __ _____ " << endl;
-    cout << "  / ___|  / \\  |  \\/  | ____|" << endl;
-    cout << " | |  _  / _ \\ | |\\/| |  _|  " << endl;
-    cout << " | |_| |/ ___ \\| |  | | |___ " << endl;
-    cout << "  \\____/_/   \\_\\_|  |_|_____|" << endl;
-    cout << endl;
-    cout << "        GAME CATALOGUE SYSTEM" << endl;
-    cout << endl;
+    cout << "\n"
+    << "   ____    _    __  __ _____ " << "\n"
+    << "  / ___|  / \\  |  \\/  | ____|" << "\n"
+    << " | |  _  / _ \\ | |\\/| |  _|  " << "\n"
+    << " | |_| |/ ___ \\| |  | | |___ " << "\n"
+    << "  \\____/_/   \\_\\_|  |_|_____|" << "\n\n"
+    << "        GAME CATALOGUE SYSTEM" << "\n\n";
+    printLine();
     color("clear");
 }
 
@@ -38,12 +38,19 @@ void printLine(){
 }
 
 void pause(){
-    cout << endl;
     color("yellow");
-    cout << "Tekan ENTER untuk melanjutkan...";
+    cout << "\nTekan ENTER untuk melanjutkan...";
     color("clear");
-    cin.ignore();
     cin.get();
+
 }
 
+void invalidMessage(bool parameter, string salahApa){
+    if (!parameter){
+        cout << "\n" << salahApa
+        << " invalid! Silahkan input ulang "
+        << salahApa << "\n";
+        pause();
+    }
+}
 

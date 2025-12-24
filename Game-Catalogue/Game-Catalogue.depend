@@ -1,14 +1,15 @@
 # depslib dependency file v1.0
-1765980350 source:c:\users\user\documents\github\tugas-tubes\game-catalogue\main.cpp
-	<iostream>
+1766616659 source:c:\users\user\documents\github\tugas-tubes\game-catalogue\main.cpp
 	"Catalogue.h"
+	"Menu.h"
 
-1765980019 c:\users\user\documents\github\tugas-tubes\game-catalogue\catalogue.h
-	<iostream>
+1766617687 c:\users\user\documents\github\tugas-tubes\game-catalogue\catalogue.h
+	<string>
+	<vector>
 	<cstdlib>
 	<ctime>
 
-1765980394 source:c:\users\user\documents\github\tugas-tubes\game-catalogue\catalogue.cpp
+1766618824 source:c:\users\user\documents\github\tugas-tubes\game-catalogue\catalogue.cpp
 	"Catalogue.h"
 
 1766510727 source:d:\kuliah\tugas kuliah\semester 3\struktur data\tugas-tubes\game-catalogue\main.cpp
@@ -40,4 +41,29 @@
 
 1766505442 source:d:\kuliah\tugas kuliah\semester 3\struktur data\tugas-tubes\game-catalogue\catalogue.cpp
 	"Catalogue.h"
+
+1766617687 source:c:\users\user\documents\github\tugas-tubes\game-catalogue\catalogue.h
+	<string>
+	<vector>
+	<cstdlib>
+	<ctime>
+
+1766594062 source:c:\users\user\documents\github\tugas-tubes\game-catalogue\decoration.h
+	<iostream>
+
+1766594062 c:\users\user\documents\github\tugas-tubes\game-catalogue\decoration.h
+	<iostream>
+
+1766616722 source:c:\users\user\documents\github\tugas-tubes\game-catalogue\decoration.cpp
+	"Decoration.h"
+
+1766617855 c:\users\user\documents\github\tugas-tubes\game-catalogue\menu.h
+	<iostream>
+	<cstdlib>
+	"Catalogue.h"
+
+1766619114 source:c:\users\user\documents\github\tugas-tubes\game-catalogue\menu.cpp
+	"Menu.h"
+	"Catalogue.h"
+	"Decoration.h"
 
