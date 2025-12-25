@@ -1,7 +1,11 @@
 #include "Menu.h"
 #include "Catalogue.h"
 #include "Decoration.h"
+
 void mainMenu(ListGame &G){
+// IS : ListGame G sudah terdefinisi, dapat dalam keadaan kosong atau berisi data game dan karakter.
+// FS : Menu utama ditampilkan secara berulang, pengguna dapat mengakses seluruh fitur aplikasi. Program berhenti ketika pengguna memilih menu keluar.
+
     int pilihan = -1;
     while (pilihan != 0){
         printLogo();
@@ -34,6 +38,9 @@ void mainMenu(ListGame &G){
 
 //INPUT===============================================================================
 void inputMenu(ListGame &G){
+// IS : ListGame G sudah terdefinisi dan program berada pada menu utama.
+// FS : Pengguna dapat memilih untuk menambahkan game atau karakter, atau kembali ke menu utama tanpa mengubah data.
+
     int pilihan = -1;
     while (pilihan != 0){
         printLogo();
@@ -53,6 +60,9 @@ void inputMenu(ListGame &G){
     }
 }
 void inputGameMenu(ListGame &G){
+// IS : ListGame G sudah terdefinisi.
+// FS : Sebuah data game baru ditambahkan ke dalam ListGame G, jika nama game belum ada sebelumnya.
+
     Game input;
     bool valid = false;
     while (!valid){
@@ -72,6 +82,9 @@ void inputGameMenu(ListGame &G){
     addGame(G, createElementGame(input));
 }
 void inputCharaMenu(ListGame &G){
+// IS : ListGame G sudah terdefinisi dan minimal terdapat satu game.
+// FS : Sebuah karakter baru ditambahkan ke game yang dipilih, jika game ditemukan dan karakter belum ada.
+
     Character input;
     string gameName;
     adrGame fromGame;
@@ -118,6 +131,9 @@ void inputCharaMenu(ListGame &G){
 
 //SEARCH===============================================================================
 void searchMenu(ListGame G){
+// IS : ListGame G sudah terdefinisi.
+// FS : Informasi game atau karakter ditampilkan sesuai pilihan pencarian. Tidak ada perubahan data pada ListGame G.
+
     int pilihan = -1;
     while (pilihan != 0){
         printLogo();
@@ -137,6 +153,9 @@ void searchMenu(ListGame G){
     }
 }
 void searchCharaMenu(ListGame G){
+// IS : ListGame G sudah terdefinisi.
+// FS : Informasi karakter ditampilkan jika ditemukan. Tidak ada perubahan data pada ListGame G.
+
     string charaName;
     vector<adrCharacter> result;
     printLogo();
@@ -167,6 +186,9 @@ void searchCharaMenu(ListGame G){
     pause();
 }
 void searchGameMenu(ListGame G){
+// IS : ListGame G sudah terdefinisi.
+// FS : Informasi game beserta karakter di dalamnya ditampilkan, jika game ditemukan, tanpa mengubah data.
+
     string gameName;
     adrGame result;
     adrCharacter p;
@@ -195,6 +217,9 @@ void searchGameMenu(ListGame G){
 
 //DELETE===============================================================================
 void deleteMenu(ListGame &G){
+// IS : ListGame G sudah terdefinisi.
+// FS : Pengguna dapat memilih untuk menghapus game, karakter, atau kembali ke menu utama.
+
     int pilihan = -1;
     while (pilihan != 0){
         printLogo();
@@ -217,6 +242,9 @@ void deleteMenu(ListGame &G){
     }
 }
 void deleteGameMenu(ListGame &G){
+// IS : ListGame G sudah terdefinisi.
+// FS : Game dihapus dari ListGame G jika ditemukan, beserta seluruh karakter yang dimilikinya.
+
     string gameName;
     adrGame C;
     printLogo();
@@ -232,6 +260,9 @@ void deleteGameMenu(ListGame &G){
 
 }
 void deleteCharMenu(ListGame &G){
+// IS : ListGame G sudah terdefinisi.
+// FS : Karakter dihapus dari game yang sesuai jika ditemukan, data lain tetap tidak berubah.
+
     string gameName, charaName;
     adrGame C;
     printLogo();
@@ -251,6 +282,9 @@ void deleteCharMenu(ListGame &G){
     pause();
 }
 void iForgor(ListGame &G){
+// IS : ListGame G sudah terdefinisi, dapat berisi data atau kosong.
+// FS : Seluruh game dan karakter dihapus dari ListGame G, sehingga katalog menjadi kosong.
+
     string confirm;
     printLogo();
     cout << "Yakin mau hapus semua data?\n"
@@ -273,6 +307,9 @@ void iForgor(ListGame &G){
 
 //VIEW===============================================================================
 void viewMenu(ListGame G) {
+// IS : ListGame G sudah terdefinisi.
+// FS : Menu tampilan data ditampilkan dan pengguna dapat memilih jenis tampilan yang diinginkan tanpa mengubah data.
+
     int pilihan = -1;
     while (pilihan != 0){
         printLogo();
@@ -303,6 +340,9 @@ void viewMenu(ListGame G) {
     }
 }
 void viewAllCatalog(ListGame G){
+// IS : ListGame G sudah terdefinisi.
+// FS : Seluruh game dan karakter ditampilkan ke layar. Data katalog tidak mengalami perubahan.
+
     adrGame p = G.first;
     printLogo();
     if (p == nullptr){
@@ -328,6 +368,9 @@ void viewAllCatalog(ListGame G){
     pause();
 }
 void viewGameMostCharacter(ListGame G){
+// IS : ListGame G sudah terdefinisi.
+// FS : Game dengan jumlah karakter terbanyak ditampilkan. Data katalog tidak berubah.
+
     adrGame most = GameWithMostCharacter(G);
     printLogo();
     if (most != nullptr){
@@ -340,6 +383,9 @@ void viewGameMostCharacter(ListGame G){
 }
 
 void viewGameAZ(ListGame G){
+// IS : ListGame G sudah terdefinisi dan dapat berisi data game atau kosong.
+// FS : Seluruh game ditampilkan dalam urutan alfabet (A–Z) berdasarkan nama game. Data asli pada ListGame G tidak mengalami perubahan.
+
     Game arr[100];
     int count = 0;
     printLogo();
@@ -351,6 +397,9 @@ void viewGameAZ(ListGame G){
     pause();
 }
 void viewGameHighestRating(ListGame G){
+// IS : ListGame G sudah terdefinisi dan dapat berisi data game atau kosong.
+// FS : Seluruh game ditampilkan berdasarkan rating tertinggi ke terendah. Data asli pada ListGame G tidak mengalami perubahan.
+
     Game arr[100];
     int count = 0;
     printLogo();
@@ -363,6 +412,9 @@ void viewGameHighestRating(ListGame G){
 }
 
 void viewGameOldest(ListGame G){
+// IS : ListGame G sudah terdefinisi dan dapat berisi data game atau kosong.
+// FS : Seluruh game ditampilkan berdasarkan tahun rilis paling lama ke paling baru. Data asli pada ListGame G tidak mengalami perubahan.
+
     Game arr[100];
     int count = 0;
     printLogo();
@@ -373,7 +425,10 @@ void viewGameOldest(ListGame G){
     }
     pause();
 }
-void viewCharacterRankPower(ListGame G){;
+void viewCharacterRankPower(ListGame G){
+// IS : ListGame G sudah terdefinisi.
+// FS : Seluruh karakter ditampilkan berdasarkan peringkat power. Data katalog tidak mengalami perubahan.
+
     Character arr[100];
     int count = 0;
     printLogo();
@@ -389,6 +444,9 @@ void viewCharacterRankPower(ListGame G){;
 
 //FIGHT===================================================================================
 void fightMenu(ListGame G){
+// IS : ListGame G sudah terdefinisi dan data karakter tersedia.
+// FS : Simulasi pertarungan dilakukan dan karakter pemenang ditampilkan. Tidak ada perubahan permanen pada data katalog.
+
     const int MAX_CHAR = 10;
     Character chosenChar[MAX_CHAR];
     int count = 0;
