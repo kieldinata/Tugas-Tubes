@@ -33,7 +33,12 @@ void printLogo(){
     << "   | |  _  / _ \\ | |\\/| |  _|  " << "\n"
     << "   | |_| |/ ___ \\| |  | | |___ " << "\n"
     << "    \\____/_/   \\_\\_|  |_|_____|" << "\n\n"
-    << "        GAME CATALOGUE SYSTEM" << "\n\n";
+    << "        GAME CATALOGUE SYSTEM" << "\n";
+    color("yellow");
+    cout << "Oleh:\n"
+    << "Yehezkiel Moreno Herdinata (103012400024)\n"
+    << "Ditya Felix Eril Santoso   (103012400049)\n";
+    color("cyan");
     printLine();
     color("clear");
 }
