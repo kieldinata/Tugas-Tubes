@@ -28,11 +28,11 @@ void printLogo(){
     system("cls");
     color("cyan");
     cout << "\n"
-    << "   ____    _    __  __ _____ " << "\n"
-    << "  / ___|  / \\  |  \\/  | ____|" << "\n"
-    << " | |  _  / _ \\ | |\\/| |  _|  " << "\n"
-    << " | |_| |/ ___ \\| |  | | |___ " << "\n"
-    << "  \\____/_/   \\_\\_|  |_|_____|" << "\n\n"
+    << "     ____    _    __  __ _____ " << "\n"
+    << "    / ___|  / \\  |  \\/  | ____|" << "\n"
+    << "   | |  _  / _ \\ | |\\/| |  _|  " << "\n"
+    << "   | |_| |/ ___ \\| |  | | |___ " << "\n"
+    << "    \\____/_/   \\_\\_|  |_|_____|" << "\n\n"
     << "        GAME CATALOGUE SYSTEM" << "\n\n";
     printLine();
     color("clear");
@@ -44,7 +44,7 @@ void printLine(){
 // IS : Kondisi output console aktif.
 // FS : Garis pembatas ditampilkan pada console.
 
-    cout << "=========================================" << endl;
+    cout << "============================================" << endl;
 }
 
 void pause(){
@@ -63,9 +63,11 @@ void invalidMessage(bool parameter, string salahApa){
 // FS : Pesan kesalahan ditampilkan jika parameter bernilai false.
 
     if (!parameter){
+        color("red");
         cout << "\n" << salahApa
         << " invalid! Silahkan input ulang "
-        << salahApa << "\n";
+        << salahApa;
+        color("clear");
         pause();
     }
 }

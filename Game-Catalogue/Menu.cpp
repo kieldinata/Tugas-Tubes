@@ -68,16 +68,17 @@ void inputGameMenu(ListGame &G){
     while (!valid){
         printLogo();
         cout << "Masukkan data game!" << "\n";
-        cout << "Nama\t\t:";
+        cout << "Nama\t\t: ";
         getline(cin, input.nama);
-        cout << "Genre\t\t:";
+        cout << "Genre\t\t: ";
         getline(cin, input.genre);
-        cout << "Rating (?/10)\t:";
+        cout << "Rating (?/10)\t: ";
         cin >> input.rating;
-        cout << "Tahun Rilis\t:";
+        cout << "Tahun Rilis\t: ";
         cin >> input.tahunRilis;
         cin.ignore();
         valid = isValidGameToAdd(G, input);
+        invalidMessage(valid, "Game");
     }
     addGame(G, createElementGame(input));
 }
@@ -102,23 +103,23 @@ void inputCharaMenu(ListGame &G){
     while (!validChara){
         printLogo();
         cout << "Masukkan data character!" << "\n";
-        cout << "Nama\t\t:";
+        cout << "Nama\t\t: ";
         getline(cin, input.nama);
-        cout << "Asal Dunia\t:";
+        cout << "Asal Dunia\t: ";
         getline(cin, input.asalDunia);
-        cout << "Peran\t\t:";
+        cout << "Peran\t\t: ";
         getline(cin, input.peran);
-        cout << "Ras\t\t:";
+        cout << "Ras\t\t: ";
         getline(cin, input.ras);
-        cout << "Strength\t:";
+        cout << "Strength\t: ";
         cin >> input.strength;
-        cout << "Agility\t\t:";
+        cout << "Agility\t\t: ";
         cin >> input.agility;
-        cout << "HP\t\t:";
+        cout << "HP\t\t: ";
         cin >> input.hp;
-        cout << "Battle IQ\t:";
+        cout << "Battle IQ\t: ";
         cin >> input.battleIQ;
-        cout << "Experience\t:";
+        cout << "Experience\t: ";
         cin >> input.experience;
         cin.ignore();
         validChara = isValidCharacter(fromGame, input.nama);
@@ -154,7 +155,7 @@ void searchMenu(ListGame G){
 }
 void searchCharaMenu(ListGame G){
 // IS : ListGame G sudah terdefinisi.
-// FS : Informasi karakter ditampilkan jika ditemukan. Tidak ada perubahan data pada ListGame G.
+// FS : Karakter yang dicari dimasukkan ke dalam vector (sebagai jaga-jaga kalau namanya sama meski beda game) lalu di outputkan.
 
     string charaName;
     vector<adrCharacter> result;
@@ -170,7 +171,7 @@ void searchCharaMenu(ListGame G){
         for (int i = 0; i < result.size(); i++){
             Character c = result[i]->info;
             cout << i+1
-            << "   Nama        : " << c.nama << "\n"
+            << ". Nama        : " << c.nama << "\n"
             << "   Asal Dunia : " << c.asalDunia << "\n"
             << "   Peran      : " << c.peran << "\n"
             << "   Ras        : " << c.ras << "\n"
@@ -289,7 +290,10 @@ void iForgor(ListGame &G){
     printLogo();
     cout << "Yakin mau hapus semua data?\n"
          << "Kalau ya tulis \"IYADEHMAU\", Kesalahan dalam penulisan otomatis batal.\n";
+    color("green");
     cin >> confirm;
+    cin.ignore();
+    color("clear");
 
     if (confirm == "IYADEHMAU"){
         byebyedata(G.first);
@@ -349,7 +353,7 @@ void viewAllCatalog(ListGame G){
         cout << "Katalog kosong.\n";
     } else {
         while (p != nullptr){
-            cout << "========================\n";
+            printLine();
             cout << "Nama       : " << p->info.nama << "\n";
             cout << "Genre      : " << p->info.genre << "\n";
             cout << "Tahun Rilis: " << p->info.tahunRilis << "\n";
@@ -358,10 +362,10 @@ void viewAllCatalog(ListGame G){
             adrCharacter q = p->firstChar;
             if (q == nullptr) cout << "   - Tidak ada karakter\n";
             while (q != nullptr){
-                cout << "   " << q->info.nama << "\n";
+                cout << "  -" << q->info.nama << "\n";
                 q = q->next;
             }
-            cout << "========================\n\n";
+            printLine();
             p = p->next;
         }
     }
@@ -377,7 +381,7 @@ void viewGameMostCharacter(ListGame G){
         cout << "Game dengan karakter terbanyak: "
              << most->info.nama << " (" << most->info.jumlahKarakter << " karakter)\n";
     } else {
-        cout << "Tidak ada game dalam katalog.\n";
+        cout << "Isi lebih banyak karakter untuk mengetahuinya!\n";
     }
     pause();
 }
@@ -457,15 +461,15 @@ void fightMenu(ListGame G){
         printLogo();
         cout<<"--- FIGHT SIMULATOR ---\n"
         <<"Masukkan karakter yang akan bertarung.\n"
-        <<"Ketik 'CANCEL' pada nama game atau karakter untuk memulai pertarungan.\n"
+        <<"Ketik 'done' pada nama game atau karakter untuk memulai pertarungan.\n"
         <<"Nama Game: ";
         getline(cin, gameName);
-        if (gameName == "CANCEL"){
+        if (gameName == "done"){
             inputting = false;
         } else {
             cout<<"Nama Karakter: ";
             getline(cin, charaName);
-            if (charaName == "CANCEL"){
+            if (charaName == "done"){
                 inputting = false;
             } else {
                 chooseCharacterArray(G, chosenChar, count, gameName, charaName, valid);
