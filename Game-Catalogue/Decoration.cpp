@@ -1,5 +1,9 @@
 #include "Decoration.h"
+
 void color(string c){
+// IS : Parameter warna (c) terdefinisi.
+// FS : Warna teks output pada console berubah sesuai nilai c.
+
     if (c == "red") {
         cout << "\033[31m";
     } else if (c == "green") {
@@ -18,6 +22,9 @@ void color(string c){
 }
 
 void printLogo(){
+// IS : Layar console berada pada kondisi apa pun.
+// FS : Layar console dibersihkan dan logo aplikasi ditampilkan.
+
     system("cls");
     color("cyan");
     cout << "\n"
@@ -34,10 +41,16 @@ void printLogo(){
 
 
 void printLine(){
+// IS : Kondisi output console aktif.
+// FS : Garis pembatas ditampilkan pada console.
+
     cout << "=========================================" << endl;
 }
 
 void pause(){
+// IS : Program sedang berjalan.
+// FS : Program berhenti sementara hingga user menekan ENTER.
+
     color("yellow");
     cout << "\nTekan ENTER untuk melanjutkan...";
     color("clear");
@@ -46,6 +59,9 @@ void pause(){
 }
 
 void invalidMessage(bool parameter, string salahApa){
+// IS : Parameter dan keterangan kesalahan (salahApa) terdefinisi.
+// FS : Pesan kesalahan ditampilkan jika parameter bernilai false.
+
     if (!parameter){
         cout << "\n" << salahApa
         << " invalid! Silahkan input ulang "
